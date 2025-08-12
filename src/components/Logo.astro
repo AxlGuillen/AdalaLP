@@ -1,0 +1,10 @@
+---
+import { SITE } from 'astrowind:config';
+import appStoreImage from '../assets/images/app-logo.png';
+import { Image } from 'astro:assets';
+---
+
+<div class="flex items-center gap-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white">
+  <Image src={appStoreImage} alt="Adala Site Logo" width={32} class="h-8 w-auto" loading="lazy" decoding="async" />
+  <span>{SITE?.name}</span>
+</div>

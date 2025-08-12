@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero3 from '~/components/widgets/Hero3.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'ADALA | International Agency for Labor Certification, Migration, and Corporate Tourism',
+  ignoreTitleTemplate: true,
+};
+
+import c1 from '~/assets/images/slider/11.webp';
+---
+
+<Layout metadata={metadata}>
+  <Hero3 id="hero">
+    <Fragment slot="title">
+      Certification, <span class="hidden xl:inline">migration and</span>
+      <span class="text-accent dark:text-white"> binational business connections</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      We connect talent and companies in Mexico, the U.S., and Canada with legality and labor certification.
+    </Fragment>
+  </Hero3>
+
+  <Note title="Philosophy" description="Legality, professional ethics, and dignified employment." />
+
+  <Features
+    id="pillars"
+    tagline="Our Pillars"
+    title="What Makes ADALA Different"
+    subtitle="A comprehensive approach combining certification, migration, and corporate tourism for reliable results."
+    items={[
+      {
+        title: 'Compliance and Legality',
+        description:
+          'Legal and documentation support for migration and labor procedures in full accordance with regulations.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Certification and Accreditation',
+        description:
+          'We evaluate skills and formalize professional profiles before institutions with official recognition.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Ethical Recruitment',
+        description: 'Responsible selection without illegal intermediaries and with thorough background checks.',
+        icon: 'tabler:user-search',
+      },
+      {
+        title: 'Comprehensive Migration Management',
+        description: 'Visas, renewals, waivers, family reunification, and defense in deportation proceedings.',
+        icon: 'tabler:dual-screen',
+      },
+      {
+        title: 'Business Networking and Corporate Tourism',
+        description:
+          'Business connections, event organization, transportation, and lodging for missions and conventions.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Transparency and Follow-Up',
+        description: 'Clear communication, case traceability, and progress reports throughout the process.',
+        icon: 'tabler:report-analytics',
+      },
+    ]}
+  />
+
+  <Content
+    id="services"
+    isReversed
+    tagline="Our Services"
+    title="Comprehensive Solutions for Talent and Businesses"
+    items={[
+      {
+        title: 'Migration and Visa Management',
+        description:
+          'Consulting and processing of visas (non-immigrant and immigrant), renewals, waivers, family reunification, naturalization, and defense in deportation cases.',
+      },
+      {
+        title: 'Labor Certification and Accreditation',
+        description:
+          'Skills evaluation, official certification, high school equivalency, degree by work experience, and income formalization.',
+      },
+      {
+        title: 'Business Networking and Corporate Tourism',
+        description:
+          'Recruitment, employer certification, organization of forums and training, air/ground transportation, and lodging.',
+      },
+    ]}
+    image={{
+      src: c1,
+      alt: 'People certifying job competencies',
+    }}
+    imageClass="rounded-2xl max-w-xl"
+    classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Driving Safe and Professional Labor Mobility
+      </h3>
+      We combine legal compliance, certification, and logistics so that individuals and organizations achieve real opportunities
+      with legal security and full support from start to finish.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps3
+    id="steps"
+    title="How We Work at ADALA: 3 Clear Steps"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Diagnosis and Eligibility</span>',
+        description: 'Needs analysis, profile review, and legal/labor requirements for the case or project.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Documentation and Certification</span>',
+        description: 'File preparation, background verification, and skills certification/accreditation.',
+        icon: 'tabler:files',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Processing and Logistics</span>',
+        description:
+          'Visa/renewal or labor process management, coordination of interviews, and travel/event logistics.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Done!',
+        icon: 'tabler:check',
+      },
+    ]}
+  />
+
+  <FAQs
+    id="faqs"
+    title="Frequently Asked Questions"
+    subtitle="Learn how ADALA integrates certification, migration management, and corporate tourism for measurable results."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Is ADALA a recruitment agency, consultancy, or something else?',
+        description:
+          'We are an international agency with three main areas: labor certification/accreditation, legal migration management, and corporate tourism/business networking.',
+      },
+      {
+        title: 'Do you guarantee visa approval?',
+        description:
+          'We do not offer guarantees. We do provide preparation, complete documentation, and professional follow-up to increase the likelihood of success in compliance with the law.',
+      },
+      {
+        title: 'Can you certify my job skills?',
+        description:
+          'Yes. We evaluate and certify skills with official validity, including degree by work experience and high school equivalency.',
+      },
+      {
+        title: 'Do you work with both companies and individuals?',
+        description:
+          'Both. We assist individuals and organizations (employer certification, ethical recruitment, organization of forums and business missions).',
+      },
+      {
+        title: 'Do you also assist with travel and event logistics?',
+        description:
+          'Yes. We manage transportation, lodging, and event/conference organization as part of our corporate tourism services.',
+      },
+      {
+        title: 'How do I get started?',
+        description:
+          'Contact us to schedule a consultation. We will evaluate your case or project and propose a clear roadmap with timelines and deliverables.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contact Us',
+        href: 'mailto:contacto@adala.mx',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Certification, Migration, and Corporate Tourism</Fragment>
+
+    <Fragment slot="subtitle">
+      Ready to take the next step? <br class="hidden md:inline" />Contact us for an initial evaluation and a customized
+      action plan.
+    </Fragment>
+  </CallToAction>
+</Layout>

@@ -1,0 +1,74 @@
+---
+import '@fontsource-variable/inter';
+
+// 'DM Sans'
+// Nunito
+// Dosis
+// Outfit
+// Roboto
+// Literata
+// 'IBM Plex Sans'
+// Karla
+// Poppins
+// 'Fira Sans'
+// 'Libre Franklin'
+// Inconsolata
+// Raleway
+// Oswald
+// 'Space Grotesk'
+// Urbanist
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
+
+    --aw-color-primary: #009fe3;
+    --aw-color-secondary: #95c11f;
+    --aw-color-accent: #194c6e;
+
+    --aw-color-text-heading: #000000;
+    --aw-color-text-default: #101010;
+    --aw-color-text-muted: #101010a8;
+    --aw-color-bg-page: #ffffff;
+
+    --aw-color-bg-page-dark: #030620;
+
+    ::selection {
+      background-color: lavender;
+    }
+  }
+
+  .dark {
+    --aw-font-sans: 'Inter Variable';
+    --aw-font-serif: 'Inter Variable';
+    --aw-font-heading: 'Inter Variable';
+
+    --aw-color-primary: #009fe3;
+    --aw-color-secondary: #95c11f;
+    --aw-color-accent: #194c6e;
+
+    --aw-color-text-heading: rgb(247, 248, 248);
+    --aw-color-text-default: rgb(229 236 246);
+    --aw-color-text-muted: rgb(229 236 246 / 66%);
+    --aw-color-bg-page: rgb(3 6 32);
+
+    ::selection {
+      background-color: black;
+      color: snow;
+    }
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background: var(--swiper-pagination-color, #009fe3) !important;
+  }
+
+  .wave-text span {
+    display: inline-block;
+    animation: wave 1.5s ease-in-out infinite;
+    animation-delay: calc(var(--w-index) * 0.1s);
+  }
+</style>

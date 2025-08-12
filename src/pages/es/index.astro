@@ -1,0 +1,203 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero3 from '~/components/widgets/Hero3.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps3 from '~/components/widgets/Steps3.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'ADALA | Agencia Internacional de Certificación Laboral, Migración y Turismo',
+  ignoreTitleTemplate: true,
+};
+
+import c1 from '~/assets/images/slider/11.webp';
+---
+
+<Layout metadata={metadata}>
+  <Hero3 id="hero">
+    <Fragment slot="title">
+      Certificación, <span class="hidden xl:inline">migración y</span>
+      <span class="text-accent dark:text-white"> vínculos empresariales binacionales</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Conectamos talento y empresas en México, EE.UU. y Canadá, con legalidad y certificación laboral.
+    </Fragment>
+  </Hero3>
+
+  <Note title="Filosofía" description="Legalidad, ética profesional y empleo digno." />
+
+  <Features
+    id="pillars"
+    tagline="Nuestros Pilares"
+    title="Lo que distingue a ADALA"
+    subtitle="Un enfoque integral que combina certificación, migración y turismo corporativo para resultados confiables."
+    items={[
+      {
+        title: 'Cumplimiento y Legalidad',
+        description: 'Acompañamiento jurídico y documental para trámites migratorios y laborales conforme a la norma.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Certificación y Acreditación',
+        description: 'Evaluamos competencias y formalizamos perfiles laborales ante instituciones con validez oficial.',
+        icon: 'tabler:certificate',
+      },
+      {
+        title: 'Reclutamiento Ético',
+        description: 'Selección responsable, sin intermediarios irregulares y con verificación de antecedentes.',
+        icon: 'tabler:user-search',
+      },
+      {
+        title: 'Gestión Migratoria Integral',
+        description:
+          'Visas, renovaciones, perdones (waivers), reunificación familiar y defensa ante procesos de deportación.',
+        icon: 'tabler:dual-screen',
+      },
+      {
+        title: 'Vinculación y Turismo Corporativo',
+        description:
+          'Enlaces empresariales, organización de eventos, traslados y hospedaje para misiones y convenciones.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        title: 'Transparencia y Seguimiento',
+        description: 'Comunicación clara, trazabilidad de expedientes y reportes durante todo el proceso.',
+        icon: 'tabler:report-analytics',
+      },
+    ]}
+  />
+
+  <Content
+    id="services"
+    isReversed
+    tagline="Nuestros Servicios"
+    title="Soluciones integrales para talento y empresas"
+    items={[
+      {
+        title: 'Gestión Migratoria y Visados',
+        description:
+          'Asesoría y tramitación de visas (no inmigrante e inmigrante), renovaciones, waivers, reunificación familiar, naturalización y defensa en casos de deportación.',
+      },
+      {
+        title: 'Certificación y Acreditación Laboral',
+        description:
+          'Evaluación de competencias, certificación con validez oficial, nivel medio superior, titulación por experiencia y formalización de ingresos.',
+      },
+      {
+        title: 'Vinculación Empresarial y Turismo Corporativo',
+        description:
+          'Reclutamiento, certificación de empleadores, organización de foros y capacitaciones, traslados aéreos/terrestres y hospedaje.',
+      },
+    ]}
+    image={{
+      src: c1,
+      alt: 'Personas certificando competencias laborales',
+    }}
+    imageClass="rounded-2xl max-w-xl"
+    classes={{ container: 'motion-safe:md:intersect:animate-fade-right' }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Impulsamos movilidad laboral segura y profesional
+      </h3>
+      Unimos cumplimiento legal, certificación y logística para que personas y organizaciones concreten oportunidades reales
+      con seguridad jurídica y acompañamiento de principio a fin.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Steps3
+    id="steps"
+    title="Así trabajamos en ADALA: 3 pasos claros"
+    items={[
+      {
+        title: 'Paso 1: <span class="font-medium">Diagnóstico y Elegibilidad</span>',
+        description: 'Análisis de necesidades, perfil y requisitos legales/laborales del caso o proyecto.',
+        icon: 'tabler:clipboard-check',
+      },
+      {
+        title: 'Paso 2: <span class="font-medium">Documentación y Certificación</span>',
+        description:
+          'Integración de expediente, validación de antecedentes, certificación/acreditación de competencias.',
+        icon: 'tabler:files',
+      },
+      {
+        title: 'Paso 3: <span class="font-medium">Trámite y Logística</span>',
+        description:
+          'Gestión de visa/renovación o proceso laboral, coordinación de entrevistas y logística de viaje/evento.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: '¡Listo!',
+        icon: 'tabler:check',
+      },
+    ]}
+  />
+
+  <FAQs
+    id="faqs"
+    title="Preguntas Frecuentes"
+    subtitle="Conoce cómo ADALA integra certificación, gestión migratoria y turismo corporativo para resultados medibles."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: '¿ADALA es reclutadora, consultora o agencia?',
+        description:
+          'Somos una agencia internacional con tres líneas: certificación/acreditación laboral, gestión migratoria legal y turismo corporativo/vinculación empresarial.',
+      },
+      {
+        title: '¿Dan garantías de aprobación de visa?',
+        description:
+          'No ofrecemos garantías. Sí brindamos preparación, integración documental y seguimiento profesional para elevar la probabilidad de éxito conforme a la ley.',
+      },
+      {
+        title: '¿Pueden certificar mis competencias laborales?',
+        description:
+          'Sí. Evaluamos y certificamos competencias con validez oficial, incluyendo opciones de titulación por experiencia y nivel medio superior.',
+      },
+      {
+        title: '¿Atienden a empresas y a personas?',
+        description:
+          'Ambos. Asesoramos a personas y a organizaciones (certificación de empleadores, reclutamiento ético, organización de foros y misiones empresariales).',
+      },
+      {
+        title: '¿También apoyan con logística de viajes y eventos?',
+        description:
+          'Sí. Gestionamos traslados, hospedaje y la organización de conferencias/capacitaciones como parte del turismo corporativo.',
+      },
+      {
+        title: '¿Cómo empiezo?',
+        description:
+          'Escríbenos y agenda un diagnóstico. Evaluamos tu caso o proyecto y te proponemos una ruta clara con tiempos y entregables.',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contáctanos',
+        href: 'mailto:contacto@adala.mx',
+        target: '_blank',
+        icon: 'tabler:mail',
+      },
+    ]}
+  >
+    <Fragment slot="title">Certificación, Migración y Turismo Corporativo</Fragment>
+
+    <Fragment slot="subtitle">
+      ¿Listo para avanzar? <br class="hidden md:inline" />Escríbenos para una evaluación inicial y una ruta de acción
+      hecha a tu medida.
+    </Fragment>
+  </CallToAction>
+</Layout>
