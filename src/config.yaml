@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Adala
     images:
-      - url: '/img/default.webp'
+      - url: ''
         width: 1200
         height: 628
     type: website
