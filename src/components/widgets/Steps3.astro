@@ -42,11 +42,7 @@ const {
     </div>
 
     <!-- Slider -->
-    <div class="relative md:basis-1/2">
-      <!--
-        El slider se monta en cliente; la envoltura 'slider-frame'
-        fuerza la altura completa para igualar la columna de texto.
-      -->
+    <div class="relative hidden md:basis-1/2 md:block">
       <div class="slider-frame inset-0  rounded-md shadow-lg md:absolute">
         <SwiperSlider client:only="vue" />
       </div>
