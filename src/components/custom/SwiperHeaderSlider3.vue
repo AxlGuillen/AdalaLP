@@ -62,5 +62,10 @@
     overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .swiper-slide {
+    display: none;
+  }
+}
 </style>
   

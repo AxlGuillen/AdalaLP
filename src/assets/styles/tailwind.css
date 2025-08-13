@@ -116,4 +116,98 @@
   transform: scaleX(1);
 }
 
+body:has(.hideLanguage) #language-toggle {
+  display: none;
+}
+
 /* End Custom nav hover effect */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    /* ADALA brand */
+    --primary: 198 100% 45%;            /* #009fe3 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 76 72% 44%;            /* #95c11f */
+    --secondary-foreground: 0 0% 9%;
+
+    --accent: 204 63% 26%;              /* #194c6e */
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 198 100% 45%;               /* usa el primario para focus */
+
+    /* charts – alineados a la marca */
+    --chart-1: 198 100% 45%;            /* primary */
+    --chart-2: 76 72% 44%;              /* secondary */
+    --chart-3: 204 63% 26%;             /* accent (oscuro) */
+    --chart-4: 198 100% 65%;            /* primary + light */
+    --chart-5: 76 72% 60%;              /* secondary + light */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    /* Mantén la marca también en dark (subo un poco la luz donde aplica) */
+    --primary: 198 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 76 72% 50%;
+    --secondary-foreground: 0 0% 9%;
+
+    --accent: 204 63% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 198 100% 50%;
+
+    --chart-1: 198 100% 60%;
+    --chart-2: 76 72% 55%;
+    --chart-3: 204 63% 40%;
+    --chart-4: 198 100% 70%;
+    --chart-5: 76 72% 65%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

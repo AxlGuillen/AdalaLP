@@ -154,6 +154,7 @@ const alternatePath = pathname.replace(/^\/(en|es)/, `/${altLang}`);
             )
           }
           <a
+            id="language-toggle"
             href={alternatePath}
             aria-label={lang === 'en' ? 'Ver en español' : 'View in English'}
             class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
