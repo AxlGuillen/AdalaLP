@@ -1,0 +1,45 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: '404 | ADALA',
+  robots: { index: false, follow: false },
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="flex-1 flex items-center justify-center px-4">
+    <div class="text-center max-w-md mx-auto">
+
+      <p class="text-8xl font-bold text-primary mb-4">404</p>
+
+      <h1 class="text-2xl font-semibold text-gray-900 dark:text-white mb-2" id="msg-title">
+        Página no encontrada
+      </h1>
+
+      <p class="text-gray-500 dark:text-gray-400 mb-8" id="msg-body">
+        El enlace que seguiste no existe o fue movido.
+      </p>
+
+      <a
+        id="msg-link"
+        href="/es"
+        class="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+      >
+        Volver al inicio
+      </a>
+
+    </div>
+  </section>
+</Layout>
+
+<script is:inline>
+  const lang = window.location.pathname.startsWith('/en') ? 'en' : 'es';
+
+  if (lang === 'en') {
+    document.getElementById('msg-title').textContent = 'Page not found';
+    document.getElementById('msg-body').textContent  = 'The link you followed does not exist or has been moved.';
+    document.getElementById('msg-link').textContent  = 'Back to home';
+    document.getElementById('msg-link').href         = '/en';
+  }
+</script>
