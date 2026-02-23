@@ -50,7 +50,8 @@ import { UI } from 'astrowind:config';
       document.getElementById('header')?.classList.remove('h-screen');
       document.getElementById('header')?.classList.remove('expanded');
       document.getElementById('header')?.classList.remove('bg-page');
-      document.querySelector('#header nav')?.classList.add('hidden');
+      const _navClose = document.querySelector('#header nav');
+      if (_navClose && window.innerWidth < 768) { _navClose.style.maxHeight = '0px'; }
       document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
     });
 
@@ -60,7 +61,11 @@ import { UI } from 'astrowind:config';
       document.getElementById('header')?.classList.toggle('h-screen');
       document.getElementById('header')?.classList.toggle('expanded');
       document.getElementById('header')?.classList.toggle('bg-page');
-      document.querySelector('#header nav')?.classList.toggle('hidden');
+      const _navToggle = document.querySelector('#header nav');
+      if (_navToggle) {
+        const _isOpen = _navToggle.style.maxHeight && _navToggle.style.maxHeight !== '0px';
+        _navToggle.style.maxHeight = _isOpen ? '0px' : _navToggle.scrollHeight + 'px';
+      }
       document.querySelector('#header > div > div:last-child')?.classList.toggle('hidden');
     });
 
@@ -112,7 +117,8 @@ import { UI } from 'astrowind:config';
       document.getElementById('header')?.classList.remove('h-screen');
       document.getElementById('header')?.classList.remove('expanded');
       document.getElementById('header')?.classList.remove('bg-page');
-      document.querySelector('#header nav')?.classList.add('hidden');
+      const _navResize = document.querySelector('#header nav');
+      if (_navResize) { _navResize.style.maxHeight = ''; }
       document.querySelector('#header > div > div:last-child')?.classList.add('hidden');
     });
 
@@ -148,7 +154,8 @@ import { UI } from 'astrowind:config';
     document.body.classList.remove('overflow-hidden');
     document.getElementById('header')?.classList.remove('h-screen');
     document.getElementById('header')?.classList.remove('expanded');
-    document.querySelector('#header nav')?.classList.add('hidden');
+    const _navPageShow = document.querySelector('#header nav');
+    if (_navPageShow && window.innerWidth < 768) { _navPageShow.style.maxHeight = '0px'; }
   };
 
   window.onload = onLoad;

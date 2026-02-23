@@ -78,12 +78,20 @@ const alternatePath = pathname.replace(/^\/(en|es)/, `/${altLang}`);
       <a class="flex items-center" href={getHomePermalink()}>
         <Logo />
       </a>
-      <div class="flex items-center md:hidden">
+      <div class="flex items-center gap-1 md:hidden">
+        <a
+          href={alternatePath}
+          aria-label={lang === 'en' ? 'Ver en español' : 'View in English'}
+          class="text-muted dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-2.5 inline-flex items-center"
+        >
+          <Icon name="tabler:language" class="w-5 h-5" />
+          <span class="ml-1 text-sm font-medium">{altLang.toUpperCase()}</span>
+        </a>
         <ToggleMenu />
       </div>
     </div>
     <nav
-      class="items-center w-full md:w-auto hidden md:flex md:mx-5 text-default overflow-y-auto overflow-x-hidden md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
+      class="flex items-center w-full md:w-auto max-h-0 md:max-h-none overflow-hidden transition-[max-height] duration-500 ease-in-out md:mx-5 text-default md:overflow-y-visible md:overflow-x-auto md:justify-self-center"
       aria-label="Main navigation"
     >
       <ul
