@@ -1,0 +1,29 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import ContactForm from '~/components/widgets/ContactForm';
+
+const metadata = {
+  title: 'Contact | ADALA',
+  description: 'Request information about our migration, labor certification, and corporate tourism services.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="py-16 px-4">
+    <div class="max-w-lg mx-auto">
+
+      <div class="text-center mb-8">
+        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Contact Us</p>
+        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Request Information</h1>
+        <p class="text-gray-500 dark:text-gray-400">
+          Tell us about your case and an advisor will get in touch with you.
+        </p>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm p-8">
+        <ContactForm lang="en" client:load />
+      </div>
+
+    </div>
+  </section>
+</Layout>
