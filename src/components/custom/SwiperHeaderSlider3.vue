@@ -44,8 +44,8 @@
     // Make modules available to the template
     const modules = [EffectCreative, Pagination, Autoplay];
     
-    const getImage = (n) =>
-        new URL(`/src/assets/images/slider/Vertical${n}.webp`, import.meta.url).href;
+    const sliderImages = import.meta.glob('/src/assets/images/slider/Vertical*.webp', { eager: true, import: 'default' });
+    const getImage = (n) => sliderImages[`/src/assets/images/slider/Vertical${n}.webp`]?.src;
 </script>
   
 <style scoped>
