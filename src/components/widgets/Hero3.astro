@@ -22,7 +22,13 @@ const {
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
-      {bg ? <Fragment set:html={bg} /> : null}
+      {
+        bg ? (
+          <Fragment set:html={bg} />
+        ) : (
+          <div class="absolute inset-0 [background-image:radial-gradient(circle,_#009fe330_1px,_transparent_1px)] [background-size:28px_28px] dark:[background-image:radial-gradient(circle,_#009fe318_1px,_transparent_1px)]" />
+        )
+      }
     </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
