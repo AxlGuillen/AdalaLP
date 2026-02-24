@@ -11,6 +11,7 @@ export const getHeaderData = (lang: 'en' | 'es') => ({
   ],
   actions: [
     {
+      variant: 'primary',
       text: lang === 'es' ? 'Contáctanos' : 'Contact Us',
       href: `/${lang}/contacto`,
     },
