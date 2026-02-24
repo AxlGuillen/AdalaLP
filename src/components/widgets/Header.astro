@@ -175,7 +175,7 @@ const alternatePath = pathname.replace(/^\/(en|es)/, `/${altLang}`);
           actions?.length ? (
             <span class="ml-4 rtl:ml-0 rtl:mr-4">
               {actions.map((btnProps) => (
-                <Button {...btnProps} class="ml-2 py-2.5 px-5.5 md:px-6 font-semibold shadow-none text-sm w-auto" />
+                <Button {...btnProps} class="ml-2 py-2.5 px-5 md:px-6 font-semibold text-sm w-auto shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 transition-shadow" />
               ))}
             </span>
           ) : (
