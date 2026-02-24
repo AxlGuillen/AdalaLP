@@ -9,21 +9,32 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="py-16 px-4">
-    <div class="max-w-lg mx-auto">
+  <section class="relative overflow-hidden min-h-screen flex flex-col justify-center py-20 px-4">
 
-      <div class="text-center mb-8">
-        <p class="text-sm font-semibold text-primary uppercase tracking-wide mb-2">Contact Us</p>
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Request Information</h1>
-        <p class="text-gray-500 dark:text-gray-400">
-          Tell us about your case and an advisor will get in touch with you.
-        </p>
+    <!-- Gradient background + dots -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary to-secondary"></div>
+    <div class="absolute inset-0 [background-image:radial-gradient(circle,_#00000022_1px,_transparent_1px)] [background-size:28px_28px]"></div>
+
+    <!-- Single card with header + form -->
+    <div class="relative max-w-lg w-full mx-auto">
+      <div class="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl overflow-hidden">
+
+        <!-- Header inside card -->
+        <div class="px-6 pt-6 pb-[18px] border-b border-gray-100 dark:border-gray-800 text-center">
+          <p class="text-sm font-semibold text-primary uppercase tracking-wider mb-2">Contact Us</p>
+          <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-1">Request Information</h1>
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+            Tell us about your case and an advisor will get in touch with you.
+          </p>
+        </div>
+
+        <!-- Form -->
+        <div class="px-6 py-[18px]">
+          <ContactForm lang="en" client:load />
+        </div>
+
       </div>
-
-      <div class="bg-white dark:bg-slate-900 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-sm p-8">
-        <ContactForm lang="en" client:load />
-      </div>
-
     </div>
+
   </section>
 </Layout>
