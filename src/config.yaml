@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Adala
     images:
-      - url: ''
+      - url: '/img/site.avif'
         width: 1200
         height: 628
     type: website

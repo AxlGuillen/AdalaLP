@@ -1,8 +1,25 @@
 ---
 import { getAsset } from '~/utils/permalinks';
+
+const pathname = Astro.url.pathname;
+const baseUrl = 'https://adala.mx';
+
+const isEs = pathname.startsWith('/es');
+const isEn = pathname.startsWith('/en');
+
+const esPath = isEs ? pathname : isEn ? pathname.replace(/^\/en/, '/es') : '/es';
+const enPath = isEn ? pathname : isEs ? pathname.replace(/^\/es/, '/en') : '/en';
 ---
 
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <link rel="sitemap" href={getAsset('/sitemap-index.xml')} />
+
+{(isEs || isEn) && (
+  <>
+    <link rel="alternate" hreflang="es" href={`${baseUrl}${esPath}`} />
+    <link rel="alternate" hreflang="en" href={`${baseUrl}${enPath}`} />
+    <link rel="alternate" hreflang="x-default" href={`${baseUrl}${esPath}`} />
+  </>
+)}
