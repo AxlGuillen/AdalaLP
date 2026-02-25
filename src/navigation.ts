@@ -4,10 +4,10 @@ import { getPermalink } from './utils/permalinks';
 
 export const getHeaderData = (lang: 'en' | 'es') => ({
   links: [
-    { text: lang === 'es' ? 'Pilares' : 'Pillars',   href: '#pillars'  },
-    { text: lang === 'es' ? 'Servicios' : 'Services', href: '#services' },
-    { text: lang === 'es' ? 'Proceso' : 'Process',    href: '#steps'    },
-    { text: 'FAQs',                                    href: '#faqs'     },
+    { text: lang === 'es' ? 'Pilares' : 'Pillars',   href: `/${lang}#pillars`  },
+    { text: lang === 'es' ? 'Servicios' : 'Services', href: `/${lang}#services` },
+    { text: lang === 'es' ? 'Proceso' : 'Process',    href: `/${lang}#steps`    },
+    { text: 'FAQs',                                    href: `/${lang}#faqs`     },
   ],
   actions: [
     {
