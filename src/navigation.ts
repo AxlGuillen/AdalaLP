@@ -13,7 +13,7 @@ export const getHeaderData = (lang: 'en' | 'es') => ({
     {
       variant: 'primary',
       text: lang === 'es' ? 'Contáctanos' : 'Contact Us',
-      href: `/${lang}/contacto`,
+      href: 'mailto:contacto@adala.mx',
     },
   ],
 });
