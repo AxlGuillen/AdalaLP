@@ -213,7 +213,7 @@ export default function ContactForm({ lang = 'es' }: Props) {
 
     setSubmitting(true);
 
-    const { error } = await supabase.from('prospects').insert({
+    const { error } = await supabase.from('adala_prospects').insert({
       full_name:         form.full_name.trim(),
       phone:             form.phone,
       email:             form.email.trim() || null,
