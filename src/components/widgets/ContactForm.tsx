@@ -5,6 +5,12 @@ import { Input } from '~/components/ui/input';
 import { Label } from '~/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select';
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 const MEXICO_STATES = [
   'Aguascalientes',
   'Baja California',
@@ -234,6 +240,9 @@ export default function ContactForm({ lang = 'es' }: Props) {
       setSubmitError(t.submitError);
       return;
     }
+
+    // Meta Pixel — conversión: prospecto enviado correctamente
+    window.fbq?.('track', 'Lead', { content_name: form.service_type });
 
     setSubmitted(true);
   };
