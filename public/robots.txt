@@ -1,2 +1,14 @@
+# ADALA — https://adala.mx
+#
+# Content Signals (https://contentsignals.org/) declara cómo puede usarse
+# este contenido. Los valores significan:
+#   search    = aparecer en resultados de buscadores tradicionales
+#   ai-input  = usarse como fuente para generar respuestas de IA (con cita)
+#   ai-train  = usarse para entrenar modelos de IA
+#
+# ADALA permite ser encontrada y citada, pero NO autoriza el entrenamiento
+# de modelos con su contenido.
+
 User-agent: *
-Disallow:
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+Allow: /
