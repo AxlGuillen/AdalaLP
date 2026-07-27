@@ -1,23 +1,6 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "destination": "/index.md"
-    },
-    {
-      "source": "/:lang(es|en)",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "destination": "/:lang/index.md"
-    },
-    {
-      "source": "/:lang(es|en)/:page(contacto|privacy|terms)",
-      "has": [{ "type": "header", "key": "accept", "value": ".*text/markdown.*" }],
-      "destination": "/:lang/:page/index.md"
-    }
-  ],
   "headers": [
     {
       "source": "/_astro/(.*)",
@@ -42,11 +25,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </es/privacy>; rel=\"privacy-policy\", </es/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </>; rel=\"alternate\"; type=\"text/markdown\""
-        },
-        {
-          "key": "Vary",
-          "value": "Accept"
+          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </es/privacy>; rel=\"privacy-policy\", </es/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     },
@@ -55,11 +34,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </:lang/privacy>; rel=\"privacy-policy\", </:lang/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </:lang>; rel=\"alternate\"; type=\"text/markdown\""
-        },
-        {
-          "key": "Vary",
-          "value": "Accept"
+          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </:lang/privacy>; rel=\"privacy-policy\", </:lang/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </:lang/index.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     },
@@ -68,11 +43,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </:lang/privacy>; rel=\"privacy-policy\", </:lang/terms>; rel=\"terms-of-service\", </:lang/:page>; rel=\"alternate\"; type=\"text/markdown\""
-        },
-        {
-          "key": "Vary",
-          "value": "Accept"
+          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </:lang/privacy>; rel=\"privacy-policy\", </:lang/terms>; rel=\"terms-of-service\", </:lang/:page/index.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     }
