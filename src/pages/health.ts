@@ -7,7 +7,14 @@ export const prerender = false;
 const PAGES = ['/es', '/en', '/es/contacto', '/en/contacto', '/es/privacy', '/en/privacy', '/es/terms', '/en/terms'];
 
 /** Recursos para agentes que deben seguir publicados. */
-const AGENT_ASSETS = ['/robots.txt', '/.well-known/agent-skills/index.json', '/es/index.md'];
+const AGENT_ASSETS = [
+  '/robots.txt',
+  '/.well-known/agent-skills/index.json',
+  '/.well-known/agent-card.json',
+  '/.well-known/mcp/server-card.json',
+  '/.well-known/api-catalog',
+  '/es/index.md',
+];
 
 type Check = { name: string; ok: boolean; detail?: string; ms?: number };
 

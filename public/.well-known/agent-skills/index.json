@@ -7,21 +7,21 @@
       "type": "text/markdown",
       "description": "Cómo contactar a ADALA y qué datos requiere su formulario de solicitud de información.",
       "url": "https://adala.mx/.well-known/agent-skills/adala-contact/SKILL.md",
-      "sha256": "c5a98d11fefae11b5ce5e89350d11c8898a5ad8ac286c24cb8b03af501e06085"
+      "sha256": "6c52b965db8da83d9024410bd9c5729bd73cd53101acf723593fc61a736dc9c0"
     },
     {
       "name": "adala-process",
       "type": "text/markdown",
       "description": "Cómo funciona el proceso de ADALA, de la evaluación inicial al trámite y la logística.",
       "url": "https://adala.mx/.well-known/agent-skills/adala-process/SKILL.md",
-      "sha256": "ea15c5f75d99cbf166ae94c69eb28c00ba8d4f528927925a36b72034897bca2f"
+      "sha256": "b104f67e61ffa419abacdfc71538ff1f40e196a7c5c96a677e2848cca9ea9649"
     },
     {
       "name": "adala-services",
       "type": "text/markdown",
       "description": "Catálogo de servicios de ADALA — certificación laboral, gestión migratoria y turismo corporativo entre México, EE.UU. y Canadá.",
       "url": "https://adala.mx/.well-known/agent-skills/adala-services/SKILL.md",
-      "sha256": "f8154173e9ff3b2e2136d7556407ddb1b5881a61348034147ac702dd077b6805"
+      "sha256": "1a766857d38677893b0a85445ef1ccbf487695a92f45274869b721aa5bc2db92"
     }
   ]
 }
