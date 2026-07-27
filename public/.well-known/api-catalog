@@ -43,6 +43,16 @@
           "title": "MCP Server Card de ADALA"
         }
       ]
+    },
+    {
+      "anchor": "https://adala.mx/api/a2a",
+      "service-desc": [
+        {
+          "href": "https://adala.mx/.well-known/agent-card.json",
+          "type": "application/json",
+          "title": "A2A Agent Card de ADALA"
+        }
+      ]
     }
   ]
 }

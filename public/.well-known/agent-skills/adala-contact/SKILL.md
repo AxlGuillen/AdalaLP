@@ -14,17 +14,17 @@ Tras enviarlo, un asesor de ADALA se pone en contacto con la persona solicitante
 
 ## Datos que pide el formulario
 
-| Campo | Obligatorio | Formato |
-|---|---|---|
-| Nombre completo | Sí | Texto, máx. 100 caracteres |
-| Número de teléfono | Sí | Exactamente 10 dígitos |
-| Correo electrónico | No | Email válido |
-| Estado | Sí | Uno de los 32 estados de México |
-| Ciudad | Sí | Texto, máx. 80 caracteres |
-| Trámite de interés | Sí | Ver identificadores en `adala-services` |
-| Descripción | Solo si el trámite es "Otro" | Texto, máx. 500 caracteres |
-| Aceptación del Aviso de Privacidad | Sí | Debe aceptarse para continuar |
-| Aceptación de comunicaciones comerciales | No | Opcional |
+| Campo                                    | Obligatorio                  | Formato                                 |
+| ---------------------------------------- | ---------------------------- | --------------------------------------- |
+| Nombre completo                          | Sí                           | Texto, máx. 100 caracteres              |
+| Número de teléfono                       | Sí                           | Exactamente 10 dígitos                  |
+| Correo electrónico                       | No                           | Email válido                            |
+| Estado                                   | Sí                           | Uno de los 32 estados de México         |
+| Ciudad                                   | Sí                           | Texto, máx. 80 caracteres               |
+| Trámite de interés                       | Sí                           | Ver identificadores en `adala-services` |
+| Descripción                              | Solo si el trámite es "Otro" | Texto, máx. 500 caracteres              |
+| Aceptación del Aviso de Privacidad       | Sí                           | Debe aceptarse para continuar           |
+| Aceptación de comunicaciones comerciales | No                           | Opcional                                |
 
 ## Nota para agentes de IA
 

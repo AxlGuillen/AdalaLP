@@ -2,3 +2,8 @@ dist
 node_modules
 .github
 .changeset
+# Catálogo RFC 9727: es JSON pero sin extensión, Prettier no lo infiere
+public/.well-known/api-catalog
+
+# salida del adaptador de Vercel
+.vercel

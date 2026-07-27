@@ -12,15 +12,15 @@ No es exclusivamente una reclutadora ni una consultora: opera **tres líneas de 
 
 Acompañamiento legal en trámites migratorios. Trámites atendidos:
 
-| Trámite | Identificador |
-|---|---|
-| Visa de Trabajo | `work-visa` |
-| Visa de Turista | `tourist-visa` |
-| Perdón Migratorio | `immigration-waiver` |
+| Trámite                                         | Identificador          |
+| ----------------------------------------------- | ---------------------- |
+| Visa de Trabajo                                 | `work-visa`            |
+| Visa de Turista                                 | `tourist-visa`         |
+| Perdón Migratorio                               | `immigration-waiver`   |
 | Reunificación Familiar / Visa para Adulto Mayor | `family-reunification` |
-| Naturalización | `naturalization` |
-| Doble Nacionalidad | `dual-nationality` |
-| Petición por Matrimonio | `marriage-petition` |
+| Naturalización                                  | `naturalization`       |
+| Doble Nacionalidad                              | `dual-nationality`     |
+| Petición por Matrimonio                         | `marriage-petition`    |
 
 **Importante:** ADALA **no ofrece garantías de aprobación** de ninguna visa. Ofrece
 preparación, integración documental y seguimiento profesional para elevar la
