@@ -15,8 +15,19 @@ import * as cheerio from 'cheerio';
 import TurndownService from 'turndown';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DIST = path.resolve(__dirname, '..', 'dist');
+
+// Con el adaptador de Vercel, Astro separa la salida en dist/client y
+// dist/server; sin adaptador todo queda en dist/. La raíz estática es la que
+// contiene las páginas, y de ella dependen las rutas públicas.
+const DIST_ROOT = path.resolve(__dirname, '..', 'dist');
+const DIST = fs.existsSync(path.join(DIST_ROOT, 'client')) ? path.join(DIST_ROOT, 'client') : DIST_ROOT;
+
 const SITE = 'https://adala.mx';
+
+// El adaptador de Vercel copia los estáticos a .vercel/output/static ANTES de
+// que corra este script, así que hay que espejar ahí lo que generamos.
+const VERCEL_STATIC = path.resolve(__dirname, '..', '.vercel', 'output', 'static');
+const mirrorToVercel = fs.existsSync(VERCEL_STATIC);
 
 const turndown = new TurndownService({
   headingStyle: 'atx',
@@ -91,7 +102,17 @@ for (const file of findPages(DIST)) {
     `- Índice de skills: ${SITE}/.well-known/agent-skills/index.json`,
   ].join('\n');
 
-  fs.writeFileSync(file.replace(/index\.html$/, 'index.md'), `${header}\n${body}\n${footer}\n`, 'utf8');
+  const markdown = `${header}\n${body}\n${footer}\n`;
+  const target = file.replace(/index\.html$/, 'index.md');
+
+  fs.writeFileSync(target, markdown, 'utf8');
+
+  if (mirrorToVercel) {
+    const mirrored = path.join(VERCEL_STATIC, path.relative(DIST, target));
+    fs.mkdirSync(path.dirname(mirrored), { recursive: true });
+    fs.writeFileSync(mirrored, markdown, 'utf8');
+  }
+
   written += 1;
 }
 

@@ -1,0 +1,26 @@
+{
+  "serverInfo": {
+    "name": "adala",
+    "version": "1.0.0",
+    "title": "ADALA — Migración, Certificación Laboral y Turismo Corporativo",
+    "description": "Servidor MCP de solo lectura con el catálogo de servicios, el proceso, las preguntas frecuentes y los requisitos de contacto de ADALA."
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://adala.mx/api/mcp"
+  },
+  "capabilities": {
+    "tools": {}
+  },
+  "tools": [
+    { "name": "get_services", "description": "Catálogo de servicios y trámites de ADALA." },
+    { "name": "get_process", "description": "Las tres etapas del proceso de ADALA." },
+    { "name": "get_faqs", "description": "Preguntas frecuentes sobre ADALA." },
+    {
+      "name": "get_contact_requirements",
+      "description": "Cómo contactar a ADALA y qué datos pide el formulario, con las restricciones de consentimiento."
+    }
+  ],
+  "documentation": "https://adala.mx/.well-known/agent-skills/index.json",
+  "privacyPolicy": "https://adala.mx/es/privacy"
+}
