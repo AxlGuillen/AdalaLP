@@ -1,0 +1,107 @@
+---
+// WebMCP — expone acciones reales del sitio a agentes de IA en el navegador.
+// https://webmachinelearning.github.io/webmcp/
+//
+// Las herramientas de consulta leen los SKILL.md publicados, así que nunca se
+// desincronizan del contenido real. La herramienta de formulario SOLO rellena
+// campos: el envío y el consentimiento del Aviso de Privacidad quedan siempre
+// en manos de la persona usuaria.
+---
+
+<script is:inline>
+  (() => {
+    if (!('modelContext' in navigator)) return;
+
+    const SKILL = (name) => `/.well-known/agent-skills/${name}/SKILL.md`;
+    const text = (value) => ({ content: [{ type: 'text', text: value }] });
+
+    const readSkill = async (name) => {
+      const response = await fetch(SKILL(name));
+      if (!response.ok) throw new Error(`No se pudo leer la skill "${name}"`);
+      return response.text();
+    };
+
+    /** Escribe en un input controlado por React disparando su setter nativo. */
+    const setReactValue = (element, value) => {
+      const proto = element instanceof HTMLTextAreaElement ? HTMLTextAreaElement : HTMLInputElement;
+      const setter = Object.getOwnPropertyDescriptor(proto.prototype, 'value')?.set;
+      setter?.call(element, value);
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+
+    const readOnlyTools = [
+      {
+        name: 'get_adala_services',
+        description:
+          'Devuelve el catálogo de servicios de ADALA: gestión migratoria y visados, certificación laboral y turismo corporativo, con los identificadores de cada trámite.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => text(await readSkill('adala-services')),
+      },
+      {
+        name: 'get_adala_process',
+        description:
+          'Explica el proceso de ADALA paso a paso, desde el diagnóstico de elegibilidad hasta el trámite y la logística.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => text(await readSkill('adala-process')),
+      },
+      {
+        name: 'get_adala_contact_info',
+        description:
+          'Indica cómo contactar a ADALA y qué datos pide su formulario, incluidas las restricciones de consentimiento para datos personales.',
+        inputSchema: { type: 'object', properties: {} },
+        execute: async () => text(await readSkill('adala-contact')),
+      },
+    ];
+
+    const prefillTool = {
+      name: 'prefill_adala_contact_form',
+      description:
+        'Rellena los campos de texto del formulario de contacto de ADALA. NO lo envía: la persona usuaria debe revisar los datos, elegir estado y trámite, aceptar el Aviso de Privacidad y pulsar "Enviar solicitud". No aceptes el aviso de privacidad en su nombre.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          full_name: { type: 'string', description: 'Nombre completo (máx. 100 caracteres)' },
+          phone: { type: 'string', description: 'Teléfono de 10 dígitos' },
+          email: { type: 'string', description: 'Correo electrónico (opcional)' },
+          city: { type: 'string', description: 'Ciudad de residencia' },
+        },
+      },
+      execute: async (args = {}) => {
+        const filled = [];
+
+        for (const field of ['full_name', 'phone', 'email', 'city']) {
+          const value = args[field];
+          if (typeof value !== 'string' || !value.trim()) continue;
+
+          const element = document.getElementById(field);
+          if (!element) continue;
+
+          setReactValue(element, value.trim());
+          filled.push(field);
+        }
+
+        if (filled.length === 0) {
+          return text('No se rellenó ningún campo. ¿Está abierta la página de contacto (/es/contacto)?');
+        }
+
+        return text(
+          `Campos rellenados: ${filled.join(', ')}. ` +
+            'Faltan por elegir manualmente el estado y el trámite de interés. ' +
+            'La persona usuaria debe aceptar el Aviso de Privacidad y pulsar "Enviar solicitud" para completar el envío.'
+        );
+      },
+    };
+
+    const register = () => {
+      // El formulario solo existe en la página de contacto.
+      const hasForm = Boolean(document.getElementById('full_name'));
+      navigator.modelContext.provideContext({
+        tools: hasForm ? [...readOnlyTools, prefillTool] : readOnlyTools,
+      });
+    };
+
+    register();
+    // Las View Transitions no recargan la página: re-registrar en cada ruta.
+    document.addEventListener('astro:page-load', register);
+  })();
+</script>
