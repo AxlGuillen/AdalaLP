@@ -34,7 +34,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </.well-known/agent-card.json>; rel=\"service-desc\"; type=\"application/json\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </health>; rel=\"status\"; type=\"application/json\", </es/privacy>; rel=\"privacy-policy\", </es/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </index.md>; rel=\"alternate\"; type=\"text/markdown\""
+          "value": "</.well-known/agent-skills/index.json>; rel=\"describedby\"; type=\"application/json\", </.well-known/agent-card.json>; rel=\"service-desc\"; type=\"application/json\", </.well-known/api-catalog>; rel=\"api-catalog\"; type=\"application/linkset+json\", </health>; rel=\"status\"; type=\"application/json\", </es/privacy>; rel=\"privacy-policy\", </es/terms>; rel=\"terms-of-service\", </sitemap-index.xml>; rel=\"sitemap\"; type=\"application/xml\", </es/index.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     },
