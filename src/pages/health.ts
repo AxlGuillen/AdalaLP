@@ -13,6 +13,8 @@ const AGENT_ASSETS = [
   '/.well-known/agent-card.json',
   '/.well-known/mcp/server-card.json',
   '/.well-known/api-catalog',
+  '/llms.txt',
+  '/llms-full.txt',
   '/es/index.md',
 ];
 
