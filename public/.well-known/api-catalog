@@ -1,0 +1,48 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://adala.mx/api",
+      "service-doc": [
+        {
+          "href": "https://adala.mx/.well-known/agent-skills/index.json",
+          "type": "application/json",
+          "title": "Índice de skills de ADALA"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://adala.mx/health",
+          "type": "application/json",
+          "title": "Health check"
+        }
+      ],
+      "item": [
+        {
+          "href": "https://adala.mx/api/services",
+          "type": "application/json",
+          "title": "Catálogo de servicios y trámites"
+        },
+        {
+          "href": "https://adala.mx/api/process",
+          "type": "application/json",
+          "title": "Etapas del proceso"
+        },
+        {
+          "href": "https://adala.mx/api/faqs",
+          "type": "application/json",
+          "title": "Preguntas frecuentes"
+        }
+      ]
+    },
+    {
+      "anchor": "https://adala.mx/api/mcp",
+      "service-desc": [
+        {
+          "href": "https://adala.mx/.well-known/mcp/server-card.json",
+          "type": "application/json",
+          "title": "MCP Server Card de ADALA"
+        }
+      ]
+    }
+  ]
+}

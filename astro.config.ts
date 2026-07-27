@@ -12,6 +12,7 @@ import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
 import vue from '@astrojs/vue';
 import react from '@astrojs/react';
+import vercel from '@astrojs/vercel';
 
 import astrowind from './vendor/integration';
 
@@ -24,7 +25,15 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  // Las páginas siguen siendo estáticas. Solo las rutas que declaran
+  // `export const prerender = false` (health, api, mcp) corren en el servidor.
   output: 'static',
+
+  // NOTA: no se usa `edgeMiddleware`. En esta versión del adaptador el
+  // middleware solo se enruta para las rutas on-demand: los estáticos los
+  // resuelve el `handle: filesystem` antes, así que no sirve para negociar
+  // Markdown por `Accept`. El Markdown se anuncia con `Link: rel="alternate"`.
+  adapter: vercel(),
 
   integrations: [
     tailwind({
